@@ -20,7 +20,8 @@ function App() {
 }
 
 function sendToNative() {
-  window.webkit.messageHandlers.setLabelText.postMessage("This is from the webpage");
+  console.log("callback try")
+  window.webkit.messageHandlers.callback.postMessage("This is from the webpage");
 }
 
 export default App;
