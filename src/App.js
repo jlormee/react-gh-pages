@@ -10,17 +10,17 @@ function App() {
         <p>
           Hello world!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={sendToNative}>
+          Send to native
+        </button>
+       
       </header>
     </div>
   );
+}
+
+function sendToNative() {
+  window.webkit.messageHandlers.setLabelText.postMessage("This is from the webpage");
 }
 
 export default App;
