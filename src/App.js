@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      data: 'Native have not call any of me'
+      data: 'Native have not call any of me',
+      extradata: '' 
     }
   }
 
@@ -26,9 +27,10 @@ class App extends Component {
     }
   }
 
-  funcForNativeToCall = () => {
+  funcForNativeToCall = (message) => {
      this.setState({
-         data: "Native called me :-)",
+         data: "Native called me to say",
+         extradata: message
      })
   };
 
@@ -40,7 +42,7 @@ class App extends Component {
           <p>
             Hello world!??
           </p>
-          <p>{this.state.data}</p>
+          <p>{this.state.data}: {this.state.extradata}</p>
           <button onClick={this.sendToNative}>
             Send to native
           </button>
